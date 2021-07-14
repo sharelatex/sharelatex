@@ -12,7 +12,7 @@ services:
             redis:
                 condition: service_started
         ports:
-            - 80:80
+            - "80:80"
         links:
             - mongo
             - redis
@@ -107,7 +107,7 @@ services:
         image: mongo:4.0
         container_name: mongo
         expose:
-            - 27017
+            - "27017"
         volumes:
             - ~/mongo_data:/data/db
         healthcheck:
@@ -121,7 +121,7 @@ services:
         image: redis:5
         container_name: redis
         expose:
-            - 6379
+            - "6379"
         volumes:
             - ~/redis_data:/data
 
